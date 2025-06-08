@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>自我介紹 - 我的興趣與生活</title>
+  <title>期末自我介紹</title>
   <style>
     body {
       margin: 0;
@@ -60,12 +60,16 @@
     }
 
 
+
+
     .gallery img {
-      width: 300px;       /* 固定寬度 */
-      height: auto;
+      width: 300px;
+      height: 300px;
+      object-fit: contain; /* 原本是 cover，會裁切 */
+      background-color: transparent;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.5s ease-in-out; /* 淡入淡出 */
     }
 
     .skill-grid {
@@ -174,7 +178,7 @@
     <h1>陳禹慈的期末自我介紹網站</h1>
     <p>台東大學綠資系二年級</p>
     <p>身高151 ｜ 貓咪萬歲 ｜ 偏科戰士</p>
-    <img src="我的照片.jpg" alt="個人照片" class="profile-img">
+    <img src="image/我的照片.jpg" alt="我的照片" class="profile-img">
   </header>
 
   <nav>
@@ -265,7 +269,7 @@
 
         imageElement.style.opacity = 0;
         setTimeout(() => {
-          imageElement.src = foodImages[randomIndex];
+          imageElement.src = "image/" + foodImages[randomIndex];
           imageElement.style.opacity = 1;
         }, 500);
       }
@@ -306,10 +310,13 @@
     </div>
 
     <script>
-      const cat1Images = ["cat1-1.jpg", "cat1-2.jpg", "cat1-3.jpg", "cat1-4.jpg", "cat1-5.jpg"];
-      const cat2Images = ["cat2-1.jpg", "cat2-2.jpg", "cat2-3.jpg"];
+      const cat1Images = ["cat1-1.jpg", "cat1-2.jpg", "cat1-3.jpg", "cat1-4.jpg", "cat1-5.jpg", "cat1-6.jpg", "cat1-7.jpg", "cat1-8.jpg"];
+      const cat2Images = ["cat2-1.jpg", "cat2-2.jpg", "cat2-3.jpg", "cat2-4.jpg", "cat2-5.jpg", "cat2-6.jpg", "cat2-7.jpg", "cat2-8.jpg"];
       let cat1Index = 0;
       let cat2Index = 0;
+
+      document.getElementById("cat1Image").src = "image/" + cat1Images[0];
+      document.getElementById("cat2Image").src = "image/" + cat2Images[0];
 
       function changeCatImage(catNumber) {
         if (catNumber === 1) {
@@ -317,7 +324,7 @@
           img.classList.remove("show");
           setTimeout(() => {
             cat1Index = (cat1Index + 1) % cat1Images.length;
-            img.src = cat1Images[cat1Index];
+            img.src = "image/" + cat1Images[cat1Index];
             img.classList.add("show");
           }, 500);
         } else if (catNumber === 2) {
@@ -325,7 +332,7 @@
           img.classList.remove("show");
           setTimeout(() => {
             cat2Index = (cat2Index + 1) % cat2Images.length;
-            img.src = cat2Images[cat2Index];
+            img.src = "image/" + cat2Images[cat2Index];
             img.classList.add("show");
           }, 500);
         }
@@ -340,6 +347,7 @@
     <h2 id="game">動漫與遊戲</h2>
     <p>
       看過的動漫很多，比較有名的作品像我的英雄學院、進擊的巨人、藥師少女的獨語、我獨自 <del>整形</del> 升級、某科學超電磁炮、葬送的芙莉蓮...等<br>
+      每年暑假固定去電影院看柯南劇場版!<br>
       目前正在追Fate系列作品，還有全知讀者視角。<br>
       遊戲的部分主要玩原神，原本還有玩楓之谷，可是電腦記憶體不夠被我刪掉了ʕ´•ᴥ•̥`ʔ
     </p>
@@ -360,20 +368,20 @@
   <footer id="me">
     &copy; 陳禹慈的自我介紹網站 ｜ 
     聯絡我
-    <a href="mailto:chen940519bbcall@gmail.com" style="margin: 0 15px; text-decoration: none;">
-      <img src="email.png" alt="email" style="width:32px; height:32px; vertical-align: middle;">
+    <a href="mailto:abc123@gmail.com" style="margin: 0 15px; text-decoration: none;">
+      <img src="image/email.png" alt="email" style="width:32px; height:32px; vertical-align: middle;">
     </a>
     <a href="tel:+886-2-12345678" style="margin: 0 15px; text-decoration: none;">
-      <img src="call.png" alt="電話" style="width:32px; height:32px; vertical-align: middle;">
+      <img src="image/call.png" alt="電話" style="width:32px; height:32px; vertical-align: middle;">
     </a>
-    <a href="images-pica.png" target="_blank" rel="noopener noreferrer" style="margin: 0 15px; text-decoration: none;">
-      <img src="ig.png" alt="Instagram" style="width:32px; height:32px; vertical-align: middle;">
+    <a href="image/images-pica.png" target="_blank" rel="noopener noreferrer" style="margin: 0 15px; text-decoration: none;">
+      <img src="image/ig.png" alt="Instagram" style="width:32px; height:32px; vertical-align: middle;">
     </a>
-    <a href="images-pica.png" target="_blank" rel="noopener noreferrer" style="margin: 0 15px; text-decoration: none;">
-      <img src="twitter.png" alt="twitter" style="width:32px; height:32px; vertical-align: middle;">
+    <a href="image/images-pica.png" target="_blank" rel="noopener noreferrer" style="margin: 0 15px; text-decoration: none;">
+      <img src="image/twitter.png" alt="twitter" style="width:32px; height:32px; vertical-align: middle;">
     </a>
-    <a href="images-pica.png" target="_blank" rel="noopener noreferrer" style="margin: 0 15px; text-decoration: none;">
-      <img src="dc.png" alt="discord" style="width:32px; height:32px; vertical-align: middle;">
+    <a href="image/images-pica.png" target="_blank" rel="noopener noreferrer" style="margin: 0 15px; text-decoration: none;">
+      <img src="image/dc.png" alt="discord" style="width:32px; height:32px; vertical-align: middle;">
     </a>
   </footer>
 
